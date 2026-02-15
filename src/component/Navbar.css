@@ -1,0 +1,80 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 20px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+
+.nav-logo {
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-logo span {
+  color: #ff5da2;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-menu li {
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-menu li.active {
+  color: #ff5da2;
+}
+
+.nav-menu li.active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 10px;
+  background: linear-gradient(90deg,#ff5da2,#7b7cff);
+}
+
+
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  position: relative;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.nav-menu a {
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s;
+}
+
+/* ⭐ active state */
+.nav-menu a.active {
+  background: linear-gradient(90deg,#ff5da2,#7b7cff);
+  color: #fff;
+}
+.nav-menu a:hover {
+  background: #f0f0ff;
+  color: #000;
+}
