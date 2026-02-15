@@ -7,38 +7,38 @@ export default function Contact() {
 
   return (
     <section
+      id="contact"
       className="
-      text-center
-      px-5 py-20
-      bg-[radial-gradient(circle_at_right_center,rgba(123,124,255,0.25),transparent_60%),radial-gradient(circle_at_left_center,rgba(255,93,162,0.25),transparent_60%)]
+        min-h-screen
+        flex flex-col justify-center
+        px-6 py-24
+        text-center
+        bg-[radial-gradient(circle_at_right_center,rgba(123,124,255,0.35),transparent_60%),radial-gradient(circle_at_left_center,rgba(255,93,162,0.35),transparent_60%)]
       "
     >
       <h1
         className="
-        text-3xl md:text-4xl lg:text-[42px]
-        font-bold
-        mb-4
-        bg-gradient-to-r
-        from-[#ff5fa2]
-        to-[#7b8cff]
-        bg-clip-text
-        text-transparent
+          text-4xl md:text-5xl font-bold mb-4
+          bg-gradient-to-r
+          from-[#ff5fa2]
+          to-[#7b8cff]
+          bg-clip-text text-transparent
         "
       >
         Contact Me
       </h1>
 
-      <p className="text-gray-500 mb-14">
-        You can contact me through the channels below.
+      <p className="text-gray-600 text-lg mb-16">
+        Feel free to reach out through any of the platforms below.
       </p>
 
       <div
         className="
-        grid gap-8
-        max-w-[1100px]
-        mx-auto
-        sm:grid-cols-2
-        lg:grid-cols-4
+          grid gap-10
+          max-w-6xl
+          mx-auto
+          sm:grid-cols-2
+          lg:grid-cols-4
         "
       >
         <ContactCard

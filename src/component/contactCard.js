@@ -5,40 +5,38 @@ export default function ContactCard({
   link,
   onClick,
 }) {
-  const baseStyle = `
-    bg-white
-    p-8
-    rounded-[22px]
-    shadow-[0_10px_30px_rgba(0,0,0,0.08)]
-    transition
-    hover:-translate-y-2
-    cursor-pointer
-    flex
-    flex-col
-    items-center
-    gap-2
-  `;
-
-  if (link) {
-    return (
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={baseStyle}
-      >
-        <div className="text-4xl">{icon}</div>
-        <h3 className="font-semibold text-lg">{title}</h3>
-        <p className="text-gray-500 text-sm">{value}</p>
-      </a>
-    );
-  }
+  const Wrapper = link ? "a" : "button";
 
   return (
-    <div onClick={onClick} className={baseStyle}>
-      <div className="text-4xl">{icon}</div>
-      <h3 className="font-semibold text-lg">{title}</h3>
-      <p className="text-gray-500 text-sm">{value}</p>
-    </div>
+    <Wrapper
+      href={link}
+      onClick={onClick}
+      target={link ? "_blank" : undefined}
+      rel={link ? "noopener noreferrer" : undefined}
+      className="
+        group
+        flex flex-col items-center justify-center
+        p-8
+        rounded-2xl
+        bg-white/40
+        backdrop-blur-lg
+        border border-white/30
+        shadow-lg
+        transition-all duration-300
+        hover:-translate-y-3
+        hover:shadow-2xl
+        hover:bg-white/60
+      "
+    >
+      <div className="text-4xl mb-4">{icon}</div>
+
+      <h3 className="text-xl font-semibold mb-2 text-gray-800">
+        {title}
+      </h3>
+
+      <p className="text-gray-600 group-hover:text-indigo-600 transition">
+        {value}
+      </p>
+    </Wrapper>
   );
 }

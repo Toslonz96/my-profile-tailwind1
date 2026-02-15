@@ -5,6 +5,8 @@ export default function Home() {
   return (
     <section
       className="
+      relative
+      overflow-hidden
       min-h-[calc(100vh-80px)]
       grid
       lg:grid-cols-[1.2fr_1fr]
@@ -13,6 +15,10 @@ export default function Home() {
       bg-[radial-gradient(circle_at_right_center,rgba(123,124,255,0.25),transparent_60%),radial-gradient(circle_at_left_center,rgba(255,93,162,0.25),transparent_60%)]
     "
     >
+      {/* Animated Background Blur */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"></div>
+
       {/* LEFT SIDE */}
       <div
         className="
@@ -24,10 +30,9 @@ export default function Home() {
         max-w-[600px]
         my-10
         transition-all
-        duration-700
+        duration-1000
         ease-out
-        opacity-100
-        translate-y-0
+        animate-fadeInUp
       "
       >
         <h1 className="text-4xl lg:text-[56px] leading-tight font-semibold">
@@ -51,6 +56,7 @@ export default function Home() {
           rounded-full
           bg-[#eef1ff]
           font-medium
+          animate-bounceSlow
         "
         >
           💻 Software Developer
@@ -75,8 +81,10 @@ export default function Home() {
             text-white
             bg-gradient-to-r from-[#ff5da2] to-[#7b7cff]
             shadow-lg
-            hover:scale-105
-            transition
+            hover:scale-110
+            hover:shadow-2xl
+            transition-all
+            duration-300
           "
           >
             About Me
@@ -92,7 +100,9 @@ export default function Home() {
             text-[#7b7cff]
             hover:bg-[#7b7cff]
             hover:text-white
-            transition
+            hover:scale-110
+            transition-all
+            duration-300
           "
           >
             Contact Me
@@ -111,6 +121,7 @@ export default function Home() {
           bg-gradient-to-br from-[#ff5da2] to-[#7b7cff]
           p-2
           shadow-2xl
+          animate-float
         "
         >
           <img
@@ -134,6 +145,44 @@ export default function Home() {
           />
         </div>
       </div>
+
+      {/* Custom Animations */}
+      <style>
+        {`
+        @keyframes float {
+          0%,100% { transform: translateY(0px); }
+          50% { transform: translateY(-15px); }
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes bounceSlow {
+          0%,100% { transform: translateY(0); }
+          50% { transform: translateY(-6px); }
+        }
+
+        .animate-float {
+          animation: float 4s ease-in-out infinite;
+        }
+
+        .animate-fadeInUp {
+          animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .animate-bounceSlow {
+          animation: bounceSlow 2.5s infinite;
+        }
+      `}
+      </style>
     </section>
   );
 }
