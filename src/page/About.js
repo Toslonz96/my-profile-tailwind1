@@ -14,14 +14,30 @@ export default function About() {
       gap-12 lg:gap-20
       px-6 lg:px-20
       py-16
-      bg-[radial-gradient(circle_at_right_center,rgba(123,124,255,0.25),transparent_60%),radial-gradient(circle_at_left_center,rgba(255,93,162,0.25),transparent_60%)]
+      bg-[radial-gradient(circle_at_right_center,rgba(30,58,138,0.45),transparent_60%),radial-gradient(circle_at_left_center,rgba(14,165,233,0.25),transparent_60%)]
     "
     >
       {/* Animated Glow Background */}
       <div className="absolute top-10 left-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
       <div className="absolute bottom-10 right-10 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"></div>
 
-      {/* LEFT SIDE */}
+      {/* LEFT SIDE (IMAGE) */}
+      <div className="flex-1 flex justify-center items-center animate-fadeInLeft">
+        <img
+          src={profile}
+          alt="profile"
+          className="
+          w-[80%] lg:w-[70%]
+          rounded-[26px]
+          shadow-[0_20px_40px_rgba(0,0,0,0.15)]
+          animate-float
+          hover:scale-105
+          transition duration-500
+        "
+        />
+      </div>
+
+      {/* RIGHT SIDE (TEXT BOX) */}
       <div
         className="
         flex-1
@@ -33,7 +49,7 @@ export default function About() {
         max-w-[620px]
         transition-all
         duration-1000
-        animate-fadeInLeft
+        animate-fadeInRight
       "
       >
         <h1
@@ -41,7 +57,7 @@ export default function About() {
           text-3xl lg:text-[42px]
           mb-5
           font-bold
-          bg-gradient-to-r from-[#ff5fa2] to-[#7b8cff]
+          bg-gradient-to-r from-[#0f172a] to-[#1e3a8a]
           bg-clip-text
           text-transparent
           animate-gradientMove
@@ -60,40 +76,23 @@ export default function About() {
           development.
         </span>
 
-        {/* INFO GRID */}
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div className="hover:-translate-y-2 transition duration-300">
             <InfoCard title="Frontend Focus" value="React / HTML / CSS" />
           </div>
           <div className="hover:-translate-y-2 transition duration-300">
-            <InfoCard title="Experience" value="web design & development" />
+            <InfoCard title="Experience" value="Web Design & Development" />
           </div>
           <div className="hover:-translate-y-2 transition duration-300">
             <InfoCard title="Design Style" value="Minimal & Clean" />
           </div>
           <div className="hover:-translate-y-2 transition duration-300">
-            <InfoCard title="Mindset" value="Always learning" />
+            <InfoCard title="Mindset" value="Always Learning" />
           </div>
         </div>
       </div>
 
-      {/* RIGHT SIDE */}
-      <div className="flex-1 flex justify-center items-center animate-fadeInRight">
-        <img
-          src={profile}
-          alt="profile"
-          className="
-          w-[80%] lg:w-[70%]
-          rounded-[26px]
-          shadow-[0_20px_40px_rgba(0,0,0,0.15)]
-          animate-float
-          hover:scale-105
-          transition duration-500
-        "
-        />
-      </div>
-
-      {/* Custom Animations */}
+      {/* Animations */}
       <style>
         {`
         @keyframes float {
@@ -102,25 +101,13 @@ export default function About() {
         }
 
         @keyframes fadeInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
+          from { opacity: 0; transform: translateX(-40px); }
+          to { opacity: 1; transform: translateX(0); }
         }
 
         @keyframes fadeInRight {
-          from {
-            opacity: 0;
-            transform: translateX(40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
+          from { opacity: 0; transform: translateX(40px); }
+          to { opacity: 1; transform: translateX(0); }
         }
 
         @keyframes gradientMove {

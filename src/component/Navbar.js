@@ -8,7 +8,7 @@ export default function Navbar() {
     "text-gray-700 hover:bg-[#f0f0ff] hover:text-black";
 
   const activeLink =
-    "bg-gradient-to-r from-[#ff5da2] to-[#7b7cff] text-white";
+    "bg-gradient-to-r from-[#0f172a] to-[#1e3a8a] text-white";
 
   return (
     <nav

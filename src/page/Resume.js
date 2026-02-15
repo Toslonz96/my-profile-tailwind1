@@ -11,7 +11,7 @@ export default function Resume() {
       overflow-hidden
       px-5 py-16
       flex justify-center
-      bg-[radial-gradient(circle_at_right_center,rgba(123,124,255,0.25),transparent_60%),radial-gradient(circle_at_left_center,rgba(255,93,162,0.25),transparent_60%)]
+      bg-[radial-gradient(circle_at_right_center,rgba(30,58,138,0.45),transparent_60%),radial-gradient(circle_at_left_center,rgba(14,165,233,0.25),transparent_60%)]
     "
     >
       {/* Background Glow */}
@@ -19,6 +19,23 @@ export default function Resume() {
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-indigo-300 rounded-full blur-3xl opacity-30 animate-pulse delay-1000"></div>
 
       <div className="w-full max-w-[1200px]">
+        <h1
+          className="
+          text-center
+          text-3xl md:text-4xl lg:text-[42px]
+          font-bold
+          mb-14
+          bg-gradient-to-r
+          from-[#0f172a] to-[#1e3a8a]
+          bg-clip-text
+          text-transparent
+          animate-gradientMove
+          bg-[length:200%_200%]
+        "
+        >
+          My Resume
+        </h1>
+
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
           
           {/* LEFT */}
@@ -67,8 +84,7 @@ export default function Resume() {
                 text-white
                 font-medium
                 bg-gradient-to-r
-                from-[#ff5fa2]
-                to-[#7b8cff]
+                from-[#0f172a] to-[#1e3a8a]
                 hover:scale-105
                 hover:shadow-xl
                 transition

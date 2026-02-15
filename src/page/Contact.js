@@ -13,15 +13,14 @@ export default function Contact() {
         flex flex-col justify-center
         px-6 py-24
         text-center
-        bg-[radial-gradient(circle_at_right_center,rgba(123,124,255,0.35),transparent_60%),radial-gradient(circle_at_left_center,rgba(255,93,162,0.35),transparent_60%)]
+        bg-[radial-gradient(circle_at_right_center,rgba(30,58,138,0.45),transparent_60%),radial-gradient(circle_at_left_center,rgba(14,165,233,0.25),transparent_60%)]
       "
     >
       <h1
         className="
           text-4xl md:text-5xl font-bold mb-4
           bg-gradient-to-r
-          from-[#ff5fa2]
-          to-[#7b8cff]
+          from-[#0f172a] to-[#1e3a8a]
           bg-clip-text text-transparent
         "
       >

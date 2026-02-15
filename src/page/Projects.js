@@ -47,7 +47,7 @@ export default function Projects() {
         text-3xl md:text-4xl lg:text-[48px]
         font-bold
         bg-gradient-to-r
-        from-purple-500
+        from-[#0f172a] to-[#1e3a8a]
         to-pink-500
         bg-clip-text
         text-transparent
