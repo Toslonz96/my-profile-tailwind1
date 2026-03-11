@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   const baseLink =
     "px-4 py-2 rounded-full font-medium transition";
 
@@ -9,6 +12,19 @@ export default function Navbar() {
 
   const activeLink =
     "bg-gradient-to-r from-[#0f172a] to-[#1e3a8a] text-white";
+
+  const menuItem = (to, label, end = false) => (
+    <NavLink
+      to={to}
+      end={end}
+      onClick={() => setOpen(false)}
+      className={({ isActive }) =>
+        `${baseLink} ${isActive ? activeLink : normalLink}`
+      }
+    >
+      {label}
+    </NavLink>
+  );
 
   return (
     <nav
@@ -29,75 +45,49 @@ export default function Navbar() {
         Chutipas<span className="text-[#ff5da2]">.</span>
       </NavLink>
 
-      {/* MENU */}
-      <div className="flex gap-6 items-center">
-        <NavLink
-          to="/"
-          end
-          className={({ isActive }) =>
-            `${baseLink} ${
-              isActive ? activeLink : normalLink
-            }`
-          }
-        >
-          Home
-        </NavLink>
+      {/* HAMBURGER */}
+      <button
+        className="md:hidden text-2xl"
+        onClick={() => setOpen(!open)}
+      >
+        ☰
+      </button>
 
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            `${baseLink} ${
-              isActive ? activeLink : normalLink
-            }`
-          }
-        >
-          About
-        </NavLink>
-
-        <NavLink
-          to="/projects"
-          className={({ isActive }) =>
-            `${baseLink} ${
-              isActive ? activeLink : normalLink
-            }`
-          }
-        >
-          Projects
-        </NavLink>
-
-        <NavLink
-          to="/resume"
-          className={({ isActive }) =>
-            `${baseLink} ${
-              isActive ? activeLink : normalLink
-            }`
-          }
-        >
-          Resume
-        </NavLink>
-
-        <NavLink
-          to="/transcript"
-          className={({ isActive }) =>
-            `${baseLink} ${
-              isActive ? activeLink : normalLink
-            }`
-          }
-        >
-          Transcript
-        </NavLink>
-
-        <NavLink
-          to="/contact"
-          className={({ isActive }) =>
-            `${baseLink} ${
-              isActive ? activeLink : normalLink
-            }`
-          }
-        >
-          Contact
-        </NavLink>
+      {/* MENU DESKTOP */}
+      <div className="hidden md:flex gap-6 items-center">
+        {menuItem("/", "Home", true)}
+        {menuItem("/about", "About")}
+        {menuItem("/projects", "Projects")}
+        {menuItem("/resume", "Resume")}
+        {menuItem("/transcript", "Transcript")}
+        {menuItem("/contact", "Contact")}
       </div>
+
+      {/* MENU MOBILE */}
+      {open && (
+        <div
+          className="
+          absolute
+          top-full
+          left-0
+          w-full
+          bg-white
+          flex flex-col
+          items-center
+          gap-4
+          py-6
+          shadow-md
+          md:hidden
+          "
+        >
+          {menuItem("/", "Home", true)}
+          {menuItem("/about", "About")}
+          {menuItem("/projects", "Projects")}
+          {menuItem("/resume", "Resume")}
+          {menuItem("/transcript", "Transcript")}
+          {menuItem("/contact", "Contact")}
+        </div>
+      )}
     </nav>
   );
 }

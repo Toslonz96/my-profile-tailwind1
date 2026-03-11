@@ -1,3 +1,5 @@
+import Qr from "../images/Qrline.jpg";
+
 export default function LineQRModal({ onClose }) {
   return (
     <div
@@ -7,6 +9,9 @@ export default function LineQRModal({ onClose }) {
         bg-black/70
         backdrop-blur-sm
         z-50
+        px-5 py-16
+        animate-fadeIn
+        
       "
     >
       <div
@@ -19,6 +24,12 @@ export default function LineQRModal({ onClose }) {
           text-center
           shadow-2xl
           animate-fadeIn
+          backdrop-blur-md
+          transition-all
+          duration-500
+          hover:-translate-y-3
+          hover:shadow-[0_30px_60px_rgba(0,0,0,0.15)]
+          hover:scale-[1.02]
         "
       >
         <button
@@ -38,7 +49,7 @@ export default function LineQRModal({ onClose }) {
         </h2>
 
         <img
-          src="/line-qr.png" // เปลี่ยนเป็น path รูป QR ของคุณ
+          src={Qr}
           alt="Line QR Code"
           className="mx-auto w-48 h-48 object-contain mb-4"
         />

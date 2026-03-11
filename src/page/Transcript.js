@@ -1,6 +1,5 @@
 import { useState } from "react";
 import previewImg from "../images/Transcript.png";
-import ContactCard from "../component/contactCard.js";
 
 export default function Transcript() {
   const [open, setOpen] = useState(false);
