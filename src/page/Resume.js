@@ -145,9 +145,9 @@ export default function Resume() {
             <section className="resume-card">
               <h3 className="resume-title">🛠 Experience</h3>
               <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>IT Support Internship</li>
+                <li>Assistant Engineer</li>
                 <li>Network Setup & Troubleshooting</li>
-                <li>Smart Farm Dashboard</li>
+                <li>Developer UI/UX</li>
               </ul>
             </section>
 
