@@ -4,7 +4,7 @@ const projects = [
     desc: "react vite and tailwindcss-based chatbot for farm management.",
     icon: "🐔",
     tags: ["React", "Vite", "Tailwind CSS", "Chatbot"],
-    github: "https://github.com/Toslonz96/smart-farm-chatbot",
+    github: "https://github.com/Toslonz96/chicken_farm.git",
   },
   {
     title: "Quiz App",
@@ -18,7 +18,7 @@ const projects = [
     desc: "Personal portfolio built with React, animations and clean UI.",
     icon: "💻",
     tags: ["React", "Framer Motion", "UI/UX"],
-    github: "https://github.com/Toslonz96/myprofile.git",
+    github: "https://github.com/Toslonz96/my-profile-tailwind1.git",
   },
 ];
 
